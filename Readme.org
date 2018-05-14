@@ -1,0 +1,32 @@
+
+* BUG lancement emulator "libGL error: unable to load driver: i965_dri.so"
+
+#+BEGIN_SRC sh
+cd ~/Android/Sdk/emulator/lib/libstdc++
+mkdir old
+mv libstdc* old/.
+ln -s /usr/lib32/libstdc++.so.6
+ln -s /usr/lib32/libstdc++.so.6.0.22
+#+END_SRC
+
+
+#+BEGIN_SRC sh
+cd ~/Android/Sdk/emulator/lib64/libstdc++
+mkdir old
+mv libstdc* old/.
+ln -s /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+ln -s /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.22
+#+END_SRC
+
+* device debug wifi
+
+- first time, connect phone on USB
+- wifi hotspot on phone / connect PC to hotspot: phone IP is in PC default route
+- connect phone to wifi / connect PC to wifi: phone IP is in Settings/AboutPhone/Status/IPaddress
+
+#+BEGIN_SRC sh
+cd ~/Android/Sdk/platform-tools
+./adb devices # check device is listed
+./adb tcpip 5555
+./adb connect <phone-ip>
+#+END_SRC
