@@ -9,7 +9,9 @@
         android:id="@+id/question_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="24dp" />
+        android:height="80dp"
+        android:padding="24dp"
+        android:textAlignment="center" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -30,12 +32,26 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/next_button"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next_button"
-        android:drawableRight="@drawable/arrow_right"
-        android:drawablePadding="4dp" />
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/previous_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/previous_button"
+            android:src="@drawable/arrow_left"
+            android:padding="20dp"/>
+
+        <ImageButton
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/next_button"
+            android:src="@drawable/arrow_right"
+            android:padding="20dp" />
+
+    </LinearLayout>
 
 </LinearLayout>
